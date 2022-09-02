@@ -1,63 +1,66 @@
 <!DOCTYPE html>
 <html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Code Quiz</title>
+  </head>
 
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="stylesheet" href="./assets/css/reset.css" />
-        <link rel="stylesheet" href="./assets/css/style.css" />
-        <title>Code Quiz</title>
-    </head>
+  <body>
+    <header>
+      <div id="progress-bar"></div>
+      <nav>
+        <a href="#">Highscores</a>
+      </nav>
+    </header>
 
-    <body>
-        <header>
-            <div id="progress-bar"></div>
-            <nav>
-                <a href="#">Highscores</a>
-            </nav>
-        </header>
-        
-        <main>
-            <section id="start-page">
-            <h1>Coding Quiz Challenge</h1>
-            <p>Welcome to the coding quiz challenge!</p>
-            <button>Start</button>
-        </section>
+    <main>
+      <section id="start-page">
+        <h1>Coding Quiz Challenge</h1>
+        <p id="line-1">Attempt to answer all of the code-related questions before the timer runs out.</p>
+        <p id="line-2">If you answer incorrectly, you will lose 10 seconds off the timer.</p>
+        <p id="line-3">Good luck!</p>
+        <button>Start</button>
+      </section>
 
-        <section id="question-pages">
-            <h2>???</h2>
-            <p>TIMER</p>
-            <button>Q.1</button>
-            <button>Q.2</button>
-            <button>Q.3</button>
-            <button>Q.4</button>
-        </section>
-        
-        <section id="end-page">
-            <h2>Challenge completed!</h2>
-            <p>You scored ...</p>
-            <form>
-                <p>Type your initials below to submit your highscore! </p>
-                <input type="text" name="Initials" placeholder="Initials"/>
-                <input id="submit-button" type="submit" value="Send"/>
-            </form>
-        </section>
-        
-        <section id="highscores-page">
-            <h2>Highscores</h2>
-            <ol>
-                <li>A</li>
-                <li>B</li>
-                <li>C</li>
-                <li>D</li>
-                <li>E</li>
-            </ol>
-            <button>Start Over</button>
-            <button>Clear Highscores</button>
-        </section>
-        </main>
-        
-        <footer>
-            <p>&copy 505laura</p>
-        </footer>
-    </body>
+    <div id="hidden">
+      <section id="question-pages">
+        <h2>???</h2>
+        <p>TIMER</p>
+        <button>Q.1</button>
+        <button>Q.2</button>
+        <button>Q.3</button>
+        <button>Q.4</button>
+      </section>
+
+      <section id="end-page">
+        <h2>Challenge completed!</h2>
+        <p>You scored ...</p>
+        <form>
+          <p>Type your initials below to submit your highscore!</p>
+          <input type="text" name="Initials" placeholder="Initials" />
+          <input id="submit-button" type="submit" value="Send" />
+        </form>
+      </section>
+
+      <section id="highscores-page">
+        <h2>Highscores</h2>
+        <ol>
+          <li>A</li>
+          <li>B</li>
+          <li>C</li>
+          <li>D</li>
+          <li>E</li>
+        </ol>
+        <button>Start Over</button>
+        <button>Clear Highscores</button>
+      </section>
+    </main>
+    </div>
+
+    <footer>
+      <p>&copy 505laura</p>
+    </footer>
+  </body>
 </html>
