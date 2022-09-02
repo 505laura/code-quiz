@@ -1,0 +1,36 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(133, 148, 126);
+}
+
+
+/*
+********************************************************
+
+Header
+
+********************************************************
+*/
+
+header {
+    display: flex;
+    width: 100vw;
+    height: 6vh;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav a {
+    color: rgb(16, 24, 12);
+    text-decoration: none;
+    padding-right: 3vw;
+    padding-left: 3vw;
+}
+
+#progress-bar {
+    height: 0.5vw;
+    width: 90vw;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color: rgba(199, 187, 187, 0);
+}
