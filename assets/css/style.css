@@ -80,8 +80,12 @@ Welcome screen / #start-page
     background-color: transparent;
     height: 40px;
     width: 200px;
+    transition: 0.2s, ease-in-out;
 }
 
+#start-page button:hover {
+    background-color: rgba(139, 160, 137, 0.336);
+}
 
 /*
 ********************************************************
