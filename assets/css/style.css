@@ -64,6 +64,13 @@ Welcome screen / #start-page
     margin-bottom: 5%;
 }
 
+#start-page h1::before {
+    font-size: 50%;
+    margin-bottom: 0.6%;
+    content: 'welcome to the ';
+    color: rgb(129, 136, 136);
+}
+
 #line-1 {
     margin-bottom: 0.5%;
 }
