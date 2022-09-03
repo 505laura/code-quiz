@@ -10,10 +10,6 @@ h2 {
     font-weight: 600;
 }
 
-.hidden {
-    display: none !important;
-}
-
 /*
 ********************************************************
 
@@ -44,7 +40,7 @@ nav a {
     width: 90vw;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
-    background-color: rgba(199, 187, 187, 0);
+    background-color: rgba(209, 134, 140, 0);
 }
 
 /*
@@ -57,8 +53,8 @@ Welcome screen / #start-page
 
 #start-page {
     display: inline-block;
-    height: 88vh;
     width: 99vw;
+    height: 88vh;
     text-align: center;
 }
 
