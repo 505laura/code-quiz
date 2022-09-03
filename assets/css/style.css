@@ -117,17 +117,28 @@ Questions / #question-pages
 }
 
 #question-pages p {
+    text-align: center;
+    line-height: 1.2;
     margin-top: 3%;
+    font-size: 150%;
 }
 
 #question-pages button {
-    width: 350px;
-    height: 50px;
-    background-color: transparent;
-    margin: 10px;
-    text-align: left;
+    background:rgba(209, 134, 140, 0.377);
+    height: 60px;
+    width: 500px;
+    margin: 8px;
+    border:1px solid #d6d6d6;
+    box-shadow:0 2px 3px 0px rgba(0,0,0,0.25);
+    border-radius:3px;
+    transition:.2s all;
 }
 
+#question-pages button:hover{
+  opacity:.5;
+  transform: scale(.98);
+  box-shadow: none;
+}
 
 /*
 ********************************************************
