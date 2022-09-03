@@ -220,6 +220,15 @@ Highscores / #highscores-page
     padding: 0 18px;
 }
 
+#highscores-page button:hover {
+    background-color: #fff;
+}
+
+#highscores-page button:active {
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
+  }
+
 /*
 ********************************************************
 
