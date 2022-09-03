@@ -143,6 +143,45 @@ Questions / #question-pages
 /*
 ********************************************************
 
+Completed challenge screen / #end-page
+
+********************************************************
+*/
+
+#end-page {
+    height: 88vh;
+    width: 99vw;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+#end-page h2 {
+    font-size: 200%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+#end-page p {
+    margin-bottom: 2%;
+}
+
+#end-page form {
+    text-align: center;
+}
+
+#initial-input {
+    width: 5vw;
+}
+
+#submit-button {
+    width: 5vw;
+}
+
+
+/*
+********************************************************
+
 Footer
 
 ********************************************************

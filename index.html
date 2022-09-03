@@ -24,7 +24,7 @@
         <button>Start</button>
       </section>
 
-      <section id="question-pages">
+      <section class="hidden" id="question-pages">
         <h2>What is the difference between ...?</h2>
         <button>A</button>
         <button>B</button>
@@ -33,12 +33,12 @@
         <p>60 <br>seconds remaining</p>
       </section>
 
-      <section class="hidden" id="end-page">
+      <section id="end-page">
         <h2>Challenge completed!</h2>
         <p>You scored ...</p>
         <form>
           <p>Type your initials below to submit your highscore!</p>
-          <input type="text" name="Initials" placeholder="Initials" />
+          <input id="initial-input" type="text" name="Initials" placeholder="Initials" />
           <input id="submit-button" type="submit" value="Send" />
         </form>
       </section>
