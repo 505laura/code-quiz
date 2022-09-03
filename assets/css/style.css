@@ -91,14 +91,19 @@ Welcome screen / #start-page
 }
 
 #start-page button {
-    background-color: transparent;
-    height: 40px;
-    width: 200px;
-    transition: 0.2s, ease-in-out;
+    background-color: #E6E3D3;
+    border: 2px solid #422800;
+    width: 130px;
+    border-radius: 30px;
+    box-shadow: #422800 4px 4px 0 0;
+    color: #422800;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 18px;
 }
 
 #start-page button:hover {
-    background-color: rgba(139, 160, 137, 0.336);
+    background-color: #fff;
 }
 
 /*
@@ -189,24 +194,25 @@ Highscores / #highscores-page
 }
 
 #highscores-page ol {
-    width: 30vw;
-    height: 20vh;
-    margin-bottom: 2%;
+    width: 600px;
+    height: 200px;
+    margin-bottom: 6%;
     margin-left: auto;
     margin-right: auto;
 }
 
 #highscores-page ol li {
-    padding: 10.8px;
-    background-color: rgba(157, 184, 142, 0.37);
+    height: 20px;
+    padding: 10px;
+    background-color: #f8a99f56;
 }
 
 #highscores-page ol li:nth-child(2) {
-    background-color: rgba(108, 167, 103, 0.363);
+    background-color: #fbc6bc65;
 }
 
 #highscores-page ol li:nth-child(4) {
-    background-color: rgba(108, 167, 103, 0.363);;
+    background-color: #fbc6bc65;
 }
 
 #highscores-page button {
@@ -227,7 +233,7 @@ Highscores / #highscores-page
 #highscores-page button:active {
     box-shadow: #422800 2px 2px 0 0;
     transform: translate(2px, 2px);
-  }
+}
 
 /*
 ********************************************************
