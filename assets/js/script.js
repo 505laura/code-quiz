@@ -100,8 +100,19 @@ function setupQuestion() {
   }
 }
 
+// Update questions and answers 0.8 seconds after the user selects an answer
+function nextQuestion() {
+  questionNumber++;
+  setTimeout(setupQuestion, 800);
+}
+
 window.onload = pageChange;
 
 startButton.addEventListener("click", pageChange);
 startButton.addEventListener("click", countdown);
+
+for (let i = 0; i < 4; i++) {
+  answers[i].addEventListener("click", nextQuestion);
+}
+
 startButton.addEventListener("click", setupQuestion);
