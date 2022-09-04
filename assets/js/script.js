@@ -90,7 +90,18 @@ const questions = [
   },
 ];
 
+// Function to input question at the top of the page and each of the answers in the button elements
+function setupQuestion() {
+  const currentQuestion = questions[questionNumber];
+  questionAsked.innerHTML = currentQuestion.question;
+
+  for (let i = 0; i < 4; i++) {
+    answers[i].innerHTML = currentQuestion.options[i];
+  }
+}
+
 window.onload = pageChange;
 
 startButton.addEventListener("click", pageChange);
 startButton.addEventListener("click", countdown);
+startButton.addEventListener("click", setupQuestion);
