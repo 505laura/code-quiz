@@ -17,7 +17,7 @@ const pages = [startPage, questionPages, endPage, highscoresPage];
 // Beginning at -1 so that the first page increments to 0
 let page = -1;
 
-// Function to change pages, beginning at the start page
+// Change pages, beginning at the start page
 function pageChange() {
   // Iterating through the pages array to hide all of the content
   for (let i = 0; i < pages.length; i++) {
@@ -43,7 +43,7 @@ function pageChange() {
   }
 }
 
-// Function to have a timer counting down from 90 seconds to 0
+// Add a timer counting down from 90 seconds to 0
 let timeRemaining = 90;
 
 function countdown() {
@@ -90,20 +90,35 @@ const questions = [
   },
 ];
 
-// Function to input question at the top of the page and each of the answers in the button elements
+// Input question at the top of the page and each of the answers in the button elements
 function setupQuestion() {
   const currentQuestion = questions[questionNumber];
   questionAsked.innerHTML = currentQuestion.question;
 
   for (let i = 0; i < 4; i++) {
     answers[i].innerHTML = currentQuestion.options[i];
+    // Reset the colors of correct/incorrect answers
+    answers[i].classList.remove("correct", "incorrect");
+  
   }
 }
 
 // Update questions and answers 0.8 seconds after the user selects an answer
 function nextQuestion() {
   questionNumber++;
+
   setTimeout(setupQuestion, 800);
+}
+
+// Make correct answers green and incorrect answers red 
+function answerResult(event) {
+  const answerSelected = event.target.innerHTML;
+  const currentQuestion = questions[questionNumber];
+  if (answerSelected === currentQuestion.answer) {
+    event.target.classList.add("correct");
+  } else {
+    event.target.classList.add("incorrect");
+  }
 }
 
 window.onload = pageChange;
@@ -112,6 +127,7 @@ startButton.addEventListener("click", pageChange);
 startButton.addEventListener("click", countdown);
 
 for (let i = 0; i < 4; i++) {
+  answers[i].addEventListener("click", answerResult);
   answers[i].addEventListener("click", nextQuestion);
 }
 
