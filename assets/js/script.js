@@ -6,6 +6,8 @@ const startPage = document.querySelector('#start-page');
 const questionPages = document.querySelector('#question-pages');
 const endPage = document.querySelector('#end-page');
 const highscoresPage = document.querySelector('#highscores-page');
+const timerCount = document.querySelector('#timer-count');
+const timerText = document.querySelector('#timer-text');
 
 // Array to group the pages together
 const pages = [startPage, questionPages, endPage, highscoresPage];
@@ -39,6 +41,24 @@ function pageChange() {
     }
 }
 
+let timeRemaining = 90;
+
+function countdown() {
+    
+        const timeInterval = setInterval(function () {
+            timeRemaining--;
+            timerCount.textContent = timeRemaining;
+            if (timeRemaining > 1) {
+            } else if (timeRemaining === 1) {
+                timerText.textContent = ' second remaining'
+            } else {
+                timerText.textContent = ' seconds remaining'
+                clearInterval(timeInterval);
+            }
+        }, 1000);
+    }
+
 window.onload = pageChange;
 
 startButton.addEventListener('click', pageChange);
+startButton.addEventListener('click', countdown);
