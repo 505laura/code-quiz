@@ -10,10 +10,13 @@ const timerCount = document.querySelector("#timer-count");
 const timerText = document.querySelector("#timer-text");
 const questionAsked = document.querySelector("#question-pages h2");
 const answers = document.querySelectorAll("#question-pages button");
+const score = document.querySelector("#score");
+const initials = document.querySelector("#initial-input");
 const submit = document.querySelector("#submit-button");
 
 // Array to group the pages together
 const pages = [startPage, questionPages, endPage, highscoresPage];
+let highscores = [];
 
 // Beginning at -1 so that the first page increments to 0
 let page = -1;
@@ -64,6 +67,7 @@ function countdown() {
 let questionNumber = 0;
 
 const rounds = 4;
+
 const questions = [
   {
     question: "question 1?",
@@ -119,6 +123,7 @@ function endQuiz() {
   clearInterval(timeInterval);
   score.textContent = timeRemaining;
 }
+
 // Make correct answers green and incorrect answers red 
 function answerResult(event) {
   const answerSelected = event.target.innerHTML;
@@ -132,11 +137,25 @@ function answerResult(event) {
   }
 }
 
-window.onload = pageChange;
 function submitHighscore(event) {
   event.preventDefault();
   pageChange();
 }
+
+function startUp() {
+  pageChange();
+  loadHighscores();
+}
+
+function loadHighscores() {
+  let savedHighscores = localStorage.getItem("highscores");
+  if (savedHighscores == undefined) {
+    savedHighscores = [];
+  }
+  highscores = savedHighscores;
+}
+
+window.onload = startUp;
 
 startButton.addEventListener("click", pageChange);
 startButton.addEventListener("click", countdown);
