@@ -50,8 +50,10 @@ function pageChange() {
 // Add a timer counting down from 90 seconds to 0
 let timeRemaining = 90;
 
+let timeInterval = -1;
+
 function countdown() {
-  const timeInterval = setInterval(function () {
+  timeInterval = setInterval(function () {
     timeRemaining--;
     timerCount.textContent = timeRemaining;
     if (timeRemaining > 1) {
@@ -140,19 +142,37 @@ function answerResult(event) {
 function submitHighscore(event) {
   event.preventDefault();
   const initialsInput = initials.value;
-  const scoreInput = Number(score.textContent);
+  const scoreInput = timeRemaining;
   const newHighscore = {
     initials: initialsInput,
     score: scoreInput
   }
   highscores.push(newHighscore);
   saveHighscores();
+  showHighscores();
   pageChange();
 }
 
 function startUp() {
   pageChange();
   loadHighscores();
+}
+
+function showHighscores() {
+  // Sort highscores in descending order
+  highscores.sort(function (a, b) {
+    return b.score - a.score;
+  });
+  
+  // Only show top 5 highscores
+  const highscoresToShow = highscores.slice(0, 5);
+
+  // Add each highscore as a new <li> element
+  highscoresToShow.forEach(function (highscore) {
+    const li = document.createElement('li');
+    li.innerHTML = `${highscore.initials} - ${highscore.score}`;
+    highscoresPage.children[1].appendChild(li);
+  });
 }
 
 function loadHighscores() {
