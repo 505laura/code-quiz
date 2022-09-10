@@ -139,6 +139,14 @@ function answerResult(event) {
 
 function submitHighscore(event) {
   event.preventDefault();
+  const initialsInput = initials.value;
+  const scoreInput = Number(score.textContent);
+  const newHighscore = {
+    initials: initialsInput,
+    score: scoreInput
+  }
+  highscores.push(newHighscore);
+  saveHighscores();
   pageChange();
 }
 
@@ -152,7 +160,11 @@ function loadHighscores() {
   if (savedHighscores == undefined) {
     savedHighscores = [];
   }
-  highscores = savedHighscores;
+  highscores = JSON.parse(savedHighscores);
+}
+
+function saveHighscores() {
+  localStorage.setItem("highscores", JSON.stringify(highscores));
 }
 
 window.onload = startUp;
