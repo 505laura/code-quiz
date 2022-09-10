@@ -62,6 +62,7 @@ function countdown() {
 
 let questionNumber = 0;
 
+const rounds = 4;
 const questions = [
   {
     question: "question 1?",
@@ -106,10 +107,17 @@ function setupQuestion() {
 // Update questions and answers 0.8 seconds after the user selects an answer
 function nextQuestion() {
   questionNumber++;
-
+  if (questionNumber > rounds) {
+    return endQuiz();
+  }
   setTimeout(setupQuestion, 800);
 }
 
+function endQuiz() {
+  setTimeout(pageChange, 800);
+  clearInterval(timeInterval);
+  score.textContent = timeRemaining;
+}
 // Make correct answers green and incorrect answers red 
 function answerResult(event) {
   const answerSelected = event.target.innerHTML;
