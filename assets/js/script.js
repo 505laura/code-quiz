@@ -10,6 +10,7 @@ const timerCount = document.querySelector("#timer-count");
 const timerText = document.querySelector("#timer-text");
 const questionAsked = document.querySelector("#question-pages h2");
 const answers = document.querySelectorAll("#question-pages button");
+const submit = document.querySelector("#submit-button");
 
 // Array to group the pages together
 const pages = [startPage, questionPages, endPage, highscoresPage];
@@ -130,6 +131,10 @@ function answerResult(event) {
 }
 
 window.onload = pageChange;
+function submitHighscore(event) {
+  event.preventDefault();
+  pageChange();
+}
 
 startButton.addEventListener("click", pageChange);
 startButton.addEventListener("click", countdown);
@@ -140,3 +145,4 @@ for (let i = 0; i < 4; i++) {
 }
 
 startButton.addEventListener("click", setupQuestion);
+submit.addEventListener("click", submitHighscore);
