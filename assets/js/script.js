@@ -14,6 +14,7 @@ const score = document.querySelector("#score");
 const initials = document.querySelector("#initial-input");
 const submit = document.querySelector("#submit-button");
 const clearButton = document.querySelector("#clear-scores");
+const startOverButton = document.querySelector("#start-over");
 
 // Array to group the pages together
 const pages = [startPage, questionPages, endPage, highscoresPage];
@@ -197,6 +198,14 @@ function clearHighscores() {
   showHighscores();
 }
 
+function startOver() {
+  page = -1;
+  pageChange();
+  questionNumber = 0;
+  timeRemaining = 90;
+  timerCount.textContent = timeRemaining;
+}
+
 window.onload = startUp;
 
 startButton.addEventListener("click", pageChange);
@@ -210,3 +219,4 @@ for (let i = 0; i < 4; i++) {
 startButton.addEventListener("click", setupQuestion);
 submit.addEventListener("click", submitHighscore);
 clearButton.addEventListener("click", clearHighscores);
+startOverButton.addEventListener("click", startOver);
