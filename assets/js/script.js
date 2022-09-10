@@ -13,6 +13,7 @@ const answers = document.querySelectorAll("#question-pages button");
 const score = document.querySelector("#score");
 const initials = document.querySelector("#initial-input");
 const submit = document.querySelector("#submit-button");
+const clearButton = document.querySelector("#clear-scores");
 
 // Array to group the pages together
 const pages = [startPage, questionPages, endPage, highscoresPage];
@@ -164,6 +165,9 @@ function showHighscores() {
     return b.score - a.score;
   });
   
+  // Clear the highscores page
+  highscoresPage.children[1].innerHTML = "";
+
   // Only show top 5 highscores
   const highscoresToShow = highscores.slice(0, 5);
 
@@ -187,6 +191,12 @@ function saveHighscores() {
   localStorage.setItem("highscores", JSON.stringify(highscores));
 }
 
+function clearHighscores() {
+  highscores = [];
+  saveHighscores();
+  showHighscores();
+}
+
 window.onload = startUp;
 
 startButton.addEventListener("click", pageChange);
@@ -199,3 +209,4 @@ for (let i = 0; i < 4; i++) {
 
 startButton.addEventListener("click", setupQuestion);
 submit.addEventListener("click", submitHighscore);
+clearButton.addEventListener("click", clearHighscores);
