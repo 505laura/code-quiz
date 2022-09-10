@@ -126,6 +126,8 @@ function answerResult(event) {
   if (answerSelected === currentQuestion.answer) {
     event.target.classList.add("correct");
   } else {
+    timeRemaining -= 10;
+    timerCount.textContent = timeRemaining;
     event.target.classList.add("incorrect");
   }
 }
