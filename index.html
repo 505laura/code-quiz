@@ -9,14 +9,13 @@
 
   <body>
     <header>
-      <div id="progress-bar"></div>
       <nav>
         <a href="#" id="highscores-link">Highscores</a>
       </nav>
     </header>
 
     <main>
-      <section id="start-page">
+      <section class="page" id="start-page">
         <h1>Coding Quiz Challenge</h1>
         <p id="line-1">Attempt to answer all of the code-related questions before the timer runs out.</p>
         <p id="line-2">If you answer incorrectly, you will lose 10 seconds off the timer.</p>
@@ -26,10 +25,10 @@
 
       <section id="question-pages">
         <h2>What is the difference between ...?</h2>
-        <button>A</button>
-        <button>B</button>
-        <button>C</button>
-        <button>D</button>
+        <button class="question-button">A</button>
+        <button class="question-button">B</button>
+        <button class="question-button">C</button>
+        <button class="question-button">D</button>
         <div id="timer">
           <div id="timer-count">90</div>
           <p id="timer-text">seconds remaining</p>
@@ -46,7 +45,7 @@
         </form>
       </section>
 
-      <section id="highscores-page">
+      <section class="page" id="highscores-page">
         <h2>Highscores</h2>
         <ol></ol>
         <button id="start-over">Start Over</button>

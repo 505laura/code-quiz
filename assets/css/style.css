@@ -1,3 +1,4 @@
+/* Set the font for all text on the page */
 body {
     font-family: 'Courier New', Courier, monospace;
     background-color: #E6E3D3;
@@ -10,6 +11,14 @@ h2 {
     font-weight: 600;
 }
 
+/* Style the pages to fill the screen */
+.page {
+    display: inline-block;
+    width: 99vw;
+    height: 88vh;
+    text-align: center;
+}
+
 /*
 ********************************************************
 
@@ -18,14 +27,16 @@ Header
 ********************************************************
 */
 
+/* Use a flexbox to position the highscore link on the right side */
 header {
     display: flex;
     width: 99vw;
     height: 6vh;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
+/* Hide underline on the highscore link and style it */
 nav a {
     font-size: 110%;
     color: #422800;
@@ -33,14 +44,6 @@ nav a {
     padding-right: 3vw;
     padding-left: 3vw;
     font-weight: bold;
-}
-
-#progress-bar {
-    height: 0.5vw;
-    width: 90vw;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    background-color: rgba(209, 134, 140, 0);
 }
 
 /*
@@ -51,13 +54,7 @@ Welcome screen / #start-page
 ********************************************************
 */
 
-#start-page {
-    display: inline-block;
-    width: 99vw;
-    height: 88vh;
-    text-align: center;
-}
-
+/* Create a flex column for the heading to have the heading under the before pseudo */
 #start-page h1 {
     display: flex;
     flex-direction: column;
@@ -67,6 +64,7 @@ Welcome screen / #start-page
     margin-bottom: 5%;
 }
 
+/* Add and style the text above the heading */
 #start-page h1::before {
     font-size: 50%;
     margin-bottom: 0.6%;
@@ -74,6 +72,7 @@ Welcome screen / #start-page
     color: rgb(129, 136, 136);
 }
 
+/* Add margins between the lines of text on the start page */
 #line-1 {
     margin-bottom: 0.5%;
 }
@@ -86,6 +85,7 @@ Welcome screen / #start-page
     margin-bottom: 2%;
 }
 
+/* Style the start button */
 #start-page button {
     background-color: #E6E3D3;
     border: 2px solid #422800;
@@ -110,6 +110,7 @@ Questions / #question-pages
 ********************************************************
 */
 
+/* Create a flex column for the questions and answers */
 #question-pages {
     display: flex;
     flex-flow: column wrap;
@@ -118,6 +119,7 @@ Questions / #question-pages
     align-items: center;
 }
 
+/* Position the timer text in the center of the horizontal axis */
 #timer {
     text-align: center;
     line-height: 1.2;
@@ -125,7 +127,8 @@ Questions / #question-pages
     font-size: 150%;
 }
 
-#question-pages button {
+/* Style the buttons containing possible answers */
+.question-button {
     background:rgba(209, 134, 140, 0.377);
     height: 60px;
     width: 500px;
@@ -136,18 +139,20 @@ Questions / #question-pages
     transition:.2s all;
 }
 
-#question-pages button:hover{
+.question-button:hover {
   opacity:.5;
   transform: scale(.98);
   box-shadow: none;
 }
 
+/* Change incorrect answer buttons to red */
 .incorrect {
-    background-color: red !important;
+    background-color: red;
 }
 
+/* Change correct answer buttons to green */
 .correct {
-    background-color: green !important;
+    background-color: green;
 }
 
 /*
@@ -158,6 +163,7 @@ Completed challenge screen / #end-page
 ********************************************************
 */
 
+/* Create a flex column for the text on the page */
 #end-page {
     height: 88vh;
     width: 99vw;
@@ -166,6 +172,7 @@ Completed challenge screen / #end-page
     align-items: center;
 }
 
+/* Add a margin under each paragraph */
 #end-page p {
     margin-bottom: 2%;
 }
@@ -190,13 +197,7 @@ Highscores / #highscores-page
 ********************************************************
 */
 
-#highscores-page {
-    height: 88vh;
-    width: 99vw;
-    display: inline-block;
-    text-align: center;
-}
-
+/* Set dimensions and margins of highscores leaderboard */
 #highscores-page ol {
     width: 600px;
     height: 200px;
@@ -205,16 +206,19 @@ Highscores / #highscores-page
     margin-right: auto;
 }
 
+/* Style the highscores list */
 #highscores-page ol li {
     height: 20px;
     padding: 10px;
     background-color: #f8a99f56;
 }
 
+/* Alternate the color of every second list item in the highscores leaderboard */
 #highscores-page ol li:nth-child(even) {
     background-color: #fbc6bc65;
 }
 
+/* Style the buttons */
 #highscores-page button {
     background-color: #E6E3D3;
     border: 2px solid #422800;
@@ -230,6 +234,7 @@ Highscores / #highscores-page
     background-color: #fff;
 }
 
+/* Move the button and add a shadow when it is being clicked */
 #highscores-page button:active {
     box-shadow: #422800 2px 2px 0 0;
     transform: translate(2px, 2px);
@@ -243,6 +248,7 @@ Footer
 ********************************************************
 */
 
+/* Set specific height of the footer */
 footer {
     width: 99vw;
     height: 6vh;
