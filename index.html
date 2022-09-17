@@ -9,12 +9,15 @@
 
   <body>
     <header>
+      <!-- Navigation element containing a link to redirect the user to the highscores page -->
       <nav>
         <a href="#" id="highscores-link">Highscores</a>
       </nav>
     </header>
 
+    <!-- Main element containing the content that will dynamically update according to the section you are on -->
     <main>
+      <!-- Section containing the contents of the initial page on load -->
       <section class="page" id="start-page">
         <h1>Coding Quiz Challenge</h1>
         <p id="line-1">Attempt to answer all of the code-related questions before the timer runs out.</p>
@@ -23,6 +26,7 @@
         <button id="start-button">Start</button>
       </section>
 
+      <!-- Section containing the content of the questions/answers page with the timer text -->
       <section id="question-pages">
         <h2>What is the difference between ...?</h2>
         <button class="question-button">A</button>
@@ -35,6 +39,7 @@
         </div>
       </section>
 
+      <!-- Section containing the content of the page displaying your score and a form to submit your initials into -->
       <section id="end-page">
         <h2>Challenge completed!</h2>
         <p>You scored <span id="score">...</span></p>
@@ -45,6 +50,7 @@
         </form>
       </section>
 
+      <!-- Section containing the highscores leaderboard and buttons to start again or clear the scoreboard -->
       <section class="page" id="highscores-page">
         <h2>Highscores</h2>
         <ol></ol>
