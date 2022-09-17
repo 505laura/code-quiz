@@ -211,11 +211,7 @@ Highscores / #highscores-page
     background-color: #f8a99f56;
 }
 
-#highscores-page ol li:nth-child(2) {
-    background-color: #fbc6bc65;
-}
-
-#highscores-page ol li:nth-child(4) {
+#highscores-page ol li:nth-child(even) {
     background-color: #fbc6bc65;
 }
 
