@@ -75,11 +75,6 @@ const rounds = 5;
 
 const questions = [
   {
-    question: "In which HTML element do we put the JavaScript code?",
-    options: ["<javascript>...</javascript>", "<js>...</js>", "<script>...</script>", "<css>...</css>"],
-    answer: "<script>...</script>",
-  },
-  {
     question: "Which symbol is used to separate JavaScript statements?",
     options: ["Comma (,)", "Colon (:)", "Hyphen (_)", "Semicolon (;)"],
     answer: "Semicolon (;)",
@@ -138,11 +133,6 @@ const questions = [
     question: "Which is the correct syntax to write an IF statement in JavaScript?",
     options: ["if i = 5", "if (i == 5)", "if i = 5 then", "if i == 5"],
     answer: "if (i == 5)",
-  },
-  {
-    question: "Which is the correct syntax to access an object property in JavaScript?",
-    options: ["objectName:propertyName", "objectName.propertyName", "objectName['propertyName']", "Both B and C"],
-    answer: "Both B and C",
   },
   {
     question: "Which property is used to get the length of a string in JavaScript?",
@@ -269,6 +259,7 @@ function startOver() {
 function goToHighscores() {
   page = 2;
   pageChange();
+  showHighscores();
 }
 
 window.onload = startUp;
