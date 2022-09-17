@@ -31,6 +31,7 @@ function pageChange() {
     pages[i].style.display = "none";
   }
   page++;
+  // Switch statement removes display:none from the page it is on
   switch (page) {
     case 0:
       startPage.style.display = "";
@@ -55,6 +56,7 @@ let timeRemaining = 90;
 
 let timeInterval = -1;
 
+// Counts down every second and changes the text depending on seconds left
 function countdown() {
   timeInterval = setInterval(function () {
     timeRemaining--;
@@ -64,14 +66,17 @@ function countdown() {
       timerText.textContent = " second remaining";
     } else {
       timerText.textContent = " seconds remaining";
+      // When 0 is reached, stop counting down
       clearInterval(timeInterval);
     }
   }, 1000);
 }
 
+// Question you are currently on
 let questionNumber = 0;
 
-const rounds = 5;
+// Number of rounds in the quiz
+const rounds = 6;
 
 const questions = [
   {
@@ -155,7 +160,6 @@ questions.forEach(function(question) { question.options.sort(function() { return
 function setupQuestion() {
   const currentQuestion = questions[questionNumber];
   questionAsked.innerHTML = currentQuestion.question;
-
   for (let i = 0; i < 4; i++) {
     answers[i].innerHTML = currentQuestion.options[i];
     // Reset the colors of correct/incorrect answers
@@ -166,12 +170,13 @@ function setupQuestion() {
 // Update questions and answers 0.8 seconds after the user selects an answer
 function nextQuestion() {
   questionNumber++;
-  if (questionNumber > rounds) {
+  if (questionNumber >= rounds) {
     return endQuiz();
   }
   setTimeout(setupQuestion, 800);
 }
 
+// Changing to the submit screen after a delay
 function endQuiz() {
   setTimeout(pageChange, 800);
   clearInterval(timeInterval);
@@ -191,6 +196,7 @@ function answerResult(event) {
   }
 }
 
+// Add the highscore to the highscores array and display the score
 function submitHighscore(event) {
   event.preventDefault();
   const initialsInput = initials.value;
@@ -205,6 +211,7 @@ function submitHighscore(event) {
   pageChange();
 }
 
+// Initialize page on load
 function startUp() {
   pageChange();
   loadHighscores();
@@ -230,6 +237,7 @@ function showHighscores() {
   });
 }
 
+// Load highscores from local storage and store them in the highscores array
 function loadHighscores() {
   let savedHighscores = localStorage.getItem("highscores");
   if (savedHighscores == undefined) {
@@ -238,16 +246,19 @@ function loadHighscores() {
   highscores = JSON.parse(savedHighscores);
 }
 
+// Save highscores to local storage 
 function saveHighscores() {
   localStorage.setItem("highscores", JSON.stringify(highscores));
 }
 
+// Clear highscores array and save to local storage
 function clearHighscores() {
   highscores = [];
   saveHighscores();
   showHighscores();
 }
 
+// Reset quiz state back to initial state
 function startOver() {
   page = -1;
   pageChange();
@@ -256,17 +267,20 @@ function startOver() {
   timerCount.textContent = timeRemaining;
 }
 
+// Takes you to highscores page and displays scores
 function goToHighscores() {
   page = 2;
   pageChange();
   showHighscores();
 }
 
+// Add event listeners to various elements on the page
 window.onload = startUp;
 
 startButton.addEventListener("click", pageChange);
 startButton.addEventListener("click", countdown);
 
+// Adds event listener to each answer button on the page
 for (let i = 0; i < 4; i++) {
   answers[i].addEventListener("click", answerResult);
   answers[i].addEventListener("click", nextQuestion);
