@@ -1,3 +1,9 @@
+:root {
+    --button-background: #E6E3D3;
+    --button-color: #422800;
+    --clicked-button: #fff;
+}
+
 /* Set the font for all text on the page */
 body {
     font-family: 'Courier New', Courier, monospace;
@@ -17,6 +23,22 @@ h2 {
     width: 99vw;
     height: 88vh;
     text-align: center;
+}
+
+button {
+    background-color: var(--button-background);
+    border: 2px solid var(--button-color);
+    width: 130px;
+    border-radius: 30px;
+    box-shadow: var(--button-color) 4px 4px 0 0;
+    color: var(--button-color);
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 18px;
+}
+
+button:hover {
+    background-color: var(--clicked-button);
 }
 
 /*
@@ -85,23 +107,6 @@ Welcome screen / #start-page
     margin-bottom: 2%;
 }
 
-/* Style the start button */
-#start-page button {
-    background-color: #E6E3D3;
-    border: 2px solid #422800;
-    width: 130px;
-    border-radius: 30px;
-    box-shadow: #422800 4px 4px 0 0;
-    color: #422800;
-    font-weight: 600;
-    font-size: 18px;
-    padding: 0 18px;
-}
-
-#start-page button:hover {
-    background-color: #fff;
-}
-
 /*
 ********************************************************
 
@@ -143,16 +148,17 @@ Questions / #question-pages
   opacity:.5;
   transform: scale(.98);
   box-shadow: none;
+  background-color: rgba(209, 134, 140, 0.377);
 }
 
 /* Change incorrect answer buttons to red */
 .incorrect {
-    background-color: red;
+    background-color: red !important;
 }
 
 /* Change correct answer buttons to green */
 .correct {
-    background-color: green;
+    background-color: green !important;
 }
 
 /*
@@ -218,25 +224,14 @@ Highscores / #highscores-page
     background-color: #fbc6bc65;
 }
 
-/* Style the buttons */
+/* Adjust width of the buttons to fit text */
 #highscores-page button {
-    background-color: #E6E3D3;
-    border: 2px solid #422800;
-    border-radius: 30px;
-    box-shadow: #422800 4px 4px 0 0;
-    color: #422800;
-    font-weight: 600;
-    font-size: 18px;
-    padding: 0 18px;
-}
-
-#highscores-page button:hover {
-    background-color: #fff;
+    width: auto;
 }
 
 /* Move the button and add a shadow when it is being clicked */
 #highscores-page button:active {
-    box-shadow: #422800 2px 2px 0 0;
+    box-shadow: var(--button-color) 2px 2px 0 0;
     transform: translate(2px, 2px);
 }
 
