@@ -71,35 +71,95 @@ function countdown() {
 
 let questionNumber = 0;
 
-const rounds = 4;
+const rounds = 5;
 
 const questions = [
   {
-    question: "question 1?",
-    options: ["yes", "no", "maybe", "sometimes"],
-    answer: "yes",
+    question: "In which HTML element do we put the JavaScript code?",
+    options: ["<javascript>...</javascript>", "<js>...</js>", "<script>...</script>", "<css>...</css>"],
+    answer: "<script>...</script>",
   },
   {
-    question: "question 2?",
-    options: ["yes", "no", "maybe", "sometimes"],
-    answer: "no",
+    question: "Which symbol is used to separate JavaScript statements?",
+    options: ["Comma (,)", "Colon (:)", "Hyphen (_)", "Semicolon (;)"],
+    answer: "Semicolon (;)",
   },
   {
-    question: "question 3?",
-    options: ["yes", "no", "maybe", "sometimes"],
-    answer: "maybe",
+    question: "Which JavaScript method is used to access an HTML element by id?",
+    options: ["document.getElementById()", "document.getElement(id)", "document.getElementById(id)", "document.elementById(id)"],
+    answer: "document.getElementById(id)",
   },
   {
-    question: "question 4?",
-    options: ["yes", "no", "maybe", "sometimes"],
-    answer: "sometimes",
+    question: "Which JavaScript method is used to write on browser's console?",
+    options: ["console.write()", "console.output()", "console.log()", "console.writeHTML()"],
+    answer: "console.log()",
   },
   {
-    question: "question 5?",
-    options: ["yes", "no", "maybe", "sometimes"],
-    answer: "yes",
+    question: "In JavaScript, single line comment begins with ___.",
+    options: ["#", "/*", "$", "//"],
+    answer: "//",
   },
+  {
+    question: "The const keyword is used to define a ______.",
+    options: ["Function scoped variable", "Block scoped variable", "Constant", "Constant with no initial value"],
+    answer: "Constant",
+  },
+  {
+    question: "What is the default value of an uninitialized variable?",
+    options: ["0", "undefined", "null", "NaN"],
+    answer: "undefined",
+  },
+  {
+    question: "Which is the correct syntax to declare a constant in JavaScript?",
+    options: ["const constant_name", "constant_name const;", "constant_name const = value;", "const constant_name = value;"],
+    answer: "const constant_name = value;",
+  },
+  {
+    question: "Which is the exponentiation operator in JavaScript?",
+    options: ["exp()", "^", "**", "pow"],
+    answer: "**",
+  },
+  {
+    question: "JavaScript arrays are written with _____.",
+    options: ["()", "{}", "[]", "<>"],
+    answer: "[]",
+  },
+  {
+    question: "JavaScript objects are written with _____.",
+    options: ["()", "{}", "[]", "<>"],
+    answer: "{}",
+  },
+  {
+    question: "Which keyword is used to define a JavaScript function?",
+    options: ["function", "fun", "method", "method()"],
+    answer: "function",
+  },
+  {
+    question: "Which is the correct syntax to write an IF statement in JavaScript?",
+    options: ["if i = 5", "if (i == 5)", "if i = 5 then", "if i == 5"],
+    answer: "if (i == 5)",
+  },
+  {
+    question: "Which is the correct syntax to access an object property in JavaScript?",
+    options: ["objectName:propertyName", "objectName.propertyName", "objectName['propertyName']", "Both B and C"],
+    answer: "Both B and C",
+  },
+  {
+    question: "Which property is used to get the length of a string in JavaScript?",
+    options: [".len", ".strlen", ".length", ".Length"],
+    answer: ".length",
+  },
+  {
+    question: "The internal clock in JavaScript counts from midnight _____.",
+    options: ["January 1, 1972", "January 1, 1947", "January 1, 1980", "January 1, 1970"],
+    answer: "January 1, 1970",
+  }
 ];
+
+// Randomize the questions
+questions.sort(function() { return Math.random() - 0.5;});
+// Randomize the options for each question 
+questions.forEach(function(question) { question.options.sort(function() { return Math.random() - 0.5;}); });
 
 // Input question at the top of the page and each of the answers in the button elements
 function setupQuestion() {
@@ -110,7 +170,6 @@ function setupQuestion() {
     answers[i].innerHTML = currentQuestion.options[i];
     // Reset the colors of correct/incorrect answers
     answers[i].classList.remove("correct", "incorrect");
-  
   }
 }
 
