@@ -25,6 +25,7 @@ h2 {
     text-align: center;
 }
 
+/* Style the buttons on each page */
 button {
     background-color: var(--button-background);
     border: 2px solid var(--button-color);
@@ -37,6 +38,7 @@ button {
     padding: 0 18px;
 }
 
+/* Change the color of the buttons when hovered */
 button:hover {
     background-color: var(--clicked-button);
 }
@@ -203,7 +205,7 @@ Highscores / #highscores-page
 ********************************************************
 */
 
-/* Set dimensions and margins of highscores leaderboard */
+/* Set dimensions and margins of the highscores leaderboard */
 #highscores-page ol {
     width: 600px;
     height: 200px;
@@ -243,7 +245,7 @@ Footer
 ********************************************************
 */
 
-/* Set specific height of the footer */
+/* Set specific height for the footer */
 footer {
     width: 99vw;
     height: 6vh;
