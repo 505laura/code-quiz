@@ -33,8 +33,5 @@ This page will display the top five highscores (initials and score).
 If you would like to attempt the quiz again, click 'Start Over'. Optionally, you can clear all of the highscores on the leaderboard by clicking 'Clear Highscores' for a fresh start.
 
 
-## Authors and acknowledgment
-Using part of the CSS reset document from:
-http://meyerweb.com/eric/tools/css/reset/ 
-v2.0 | 20110126
-License: none (public domain)
+## Acknowledgment
+Using part of the CSS reset document from http://meyerweb.com/eric/tools/css/reset/ 
